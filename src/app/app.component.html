@@ -1,0 +1,12 @@
+<mat-toolbar color="primary">
+	Goat Generator
+	<span class="fill-remaining-space"></span>
+	<button *ngIf="!goats">Readying Goats</button>
+	<button *ngIf="goats" mat-button (click)="getNextGoat()">Get A New Goat</button>
+	</mat-toolbar>
+
+<mat-grid-list cols="3">
+	<mat-grid-tile *ngFor="let goat of goatsShowing">
+		<goat-gen [goat]="goat"></goat-gen>
+	</mat-grid-tile>
+</mat-grid-list>
